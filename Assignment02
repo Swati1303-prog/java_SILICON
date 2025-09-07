@@ -1,0 +1,339 @@
+1.	Write a program to calculate tax, given the following conditions:
+a.	If income is less than 150000 then no tax
+b.	If taxable income is in the range 150001 to 300000 then charge 10% tax
+c.	If taxable income is in the range 300001 to 500000 then charge 20% tax
+d.	If taxable income is above 500001 then charge 30% tax
+SOLUTION:
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your income: ");
+        double income = sc.nextDouble();
+        double taxRate;
+
+        if (income > 500000) {
+            taxRate = income * 0.3;
+        } else if (income > 300000) {
+            taxRate = income * 0.2;
+        } else if (income > 150000) {
+            taxRate = income * 0.1;
+        } else {
+            taxRate = 0;
+        }
+        System.out.println("Your calculated tax on the income is " + taxRate);
+    }
+}
+Output:
+Enter your income: 456789
+Your calculated tax on the income is 91357.8
+
+2.	Write a program to enter the marks of a student in 4 different subjects. Then display the grade of the student as per the following conditions:
+a.	If the average mark is greater than or equal to 90 then grade is O
+b.	If the average mark is greater than equal to 80 but less than 90 then grade is E
+c.	If the average mark is greater than equal to 70 but less than 80 then grade is A
+d.	If the average mark is greater than equal to 60 but less than 70 then grade is B
+e.	If the average mark is greater than equal to 50 but less than 60 then grade is C
+f.	If the average mark is less than 50 then grade is 
+SOLUTION:
+import java.util.Scanner;
+public class grade {
+    public static void main(String s[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter your marks in English: ");
+        double english = sc.nextDouble();
+        System.out.print("Enter your marks in Maths: ");
+        double maths = sc.nextDouble();
+        System.out.print("Enter your marks in Science: ");
+        double science = sc.nextDouble();
+        System.out.print("Enter your marks in Computer: ");
+        double computer = sc.nextDouble();
+        double average = (english + maths + science + computer) / 4;
+        String grade;
+
+        if (average >=90) {
+            grade = "O";
+        } else if (average >= 80 && average<90) {
+            grade = "E";
+        } else if (average >=70 && average<80) {
+            grade = "A";
+        } else if (average >= 60 && average<70) {
+            grade = "B";
+        } else if (average >= 50 && average<60) {
+            grade = "C";
+        } else {
+            grade = "F";
+        }
+        System.out.println("Your grade is " + grade);
+    }
+}
+Output:
+Enter your marks in English: 88
+Enter your marks in Maths: 79
+Enter your marks in Science: 90
+Enter your marks in Computer: 94
+Your grade is E
+
+3.	Write a program to calculate the roots of a quadratic equation.
+SOLUTION:
+import java.util.Scanner;
+class demo {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the 3 coefficients of the quadratic equation: ");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
+        double c = sc.nextDouble();
+        double det = b*b-4*a*c;
+
+        if (det < 0) {
+            System.out.println("No real roots exists");
+        } else {
+            det = Math.sqrt(det);
+            double root1 = (-b + det) / 2 * a;
+
+            if (det == 0) {
+                System.out.println("The real and equal root is " + root1);
+            } else {
+                double root2 = (-b - det) / 2 * a;
+                System.out.println("The real and distinct roots are " + root1 + " and " + root2);
+            }
+        }
+    }
+}
+Output:
+Enter the 3 coefficients of the quadratic equation: 2 4 2
+The real and equal root is -4.0
+4.	Write a program to enter a number from 1 to 7 and display the corresponding day of the week using switch statement.
+SOLUTION:
+import java.util.Scanner;
+class dayweek {
+    public static void main(String s[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the day number:");
+        int num=sc.nextInt();
+        String day;
+        switch(num){
+            case 1:
+            day="Monday";
+            break;
+            case 2:
+            day="Tuesday";
+            break;
+            case 3:
+            day="Wednesday";
+            break;
+            case 4:
+            day="Thursday";
+            break;
+            case 5:
+            day="Friday";
+            break;
+            case 6:
+            day="Saturday";
+            break;
+            default:
+            System.out.println("Invalid number");
+            return;
+        }
+        System.out.println("the corresponding day is "+day);
+          }
+    
+}
+Output:
+Enter the day number:3
+the corresponding day is Wednesday
+5.	Write a program to find out the factorial of any inputted number.
+SOLUTION:
+import java.util.Scanner;
+public class factorial {
+    public static void main(String s[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number:");
+        int num=sc.nextInt();
+        int fact=1;
+        for(int i=2;i<=num;i++){
+            fact*=i;
+        }
+        System.out.println("the factorial of " +num+"is" +fact);
+    }
+    }
+Output:
+Enter a number:4
+the factorial of 4is24
+6.	Write a program to check whether an inputted number is prime or not.
+SOLUTION:
+import java.util.Scanner;
+class demo{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                System.out.println(num + " is not a prime number");
+                return;
+            }
+        }
+        System.out.println(num + " is a prime number");
+    }
+}
+Output:
+Enter a number: 2
+2 is a prime number
+
+7.	Write a program to check whether an inputted number is palindrome or not.
+SOLUTION:
+import java.util.Scanner;
+public class palindrome {
+    public static void main(String s[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number");
+        int num=sc.nextInt();
+        int temp=num,reversed=0;
+        while (temp!=0){
+            reversed=reversed*10+temp%10;
+            temp/=10;
+        }
+        if(num==reversed){
+            System.out.println(num+"is a palindrome");
+        }else{
+            System.out.println(num+"is not a palindrome");
+        }
+    }
+    
+}
+Output:
+Enter a number232
+232is a palindrome
+8.Write a program to find out the binary equivalent of any inputted decimal number.
+SOLUTION:
+import java.util.Scanner;
+public class decimaltobinary {
+    public static void main(String s[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter a number");
+        int num=sc.nextInt();
+        int bin=0,mul=1;
+        while(num!=0){
+            bin=bin+(num%2)*mul;
+            num/=2;
+            mul*=10;
+        }
+        System.out.println("The binary equivalent is:"+bin);
+    
+    }
+    
+}
+Output:
+Enter a number: 12
+The binary equivalent is 1100
+9.Write a program to display all Armstrong numbers from 1 to 10000.
+SOLUTION:
+public class armstrong {
+ public static void main(String s[]){
+    System.out.println("The armstrong number between 1 to 10000 are");
+    
+for(int num=1;num<=10000;num++){
+    int temp=num,armstrong=0;
+    int digits=String.valueOf(num).length();
+    while(temp>0){
+        int digit=temp%10;
+        armstrong+=Math.pow(digit,digits);
+        temp/=10;
+    }
+    if(num==armstrong){
+        System.out.println(num+" ");
+    }
+    }
+}
+}
+
+Output:
+The armstrong numbers between 1 and 10000 are
+1  2  3  4  5  6  7  8  9  153  370  371 407 1634 8208 9474
+
+10.Write a program to find out the largest between two numbers using a conditional operator.
+SOLUTION:
+import java.util.Scanner;
+class largest{
+    public static void main(String s[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter two numbers:");
+        int num1=sc.nextInt();
+        int num2=sc.nextInt();
+        int max=num1>num2?num1:num2;
+        System.out.println("the largest between"+num1+"and"+num2+ "is"+max);
+
+    }
+}
+Output:
+Enter two numbers:36 63
+the largest between36and63is63
+11.Write a program to find out the largest between three numbers using the conditional operator.
+SOLUTION:
+import java.util.Scanner;
+public class largestthree {
+    public static void main(String s[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter three numbers:");
+        int num1=sc.nextInt();
+        int num2=sc.nextInt();
+        int num3=sc.nextInt();
+        int max=num1 > num2 ? (num1 > num3 ? num1 : num3) : (num2 > num3 ? num2 : num3);
+        System.out.println("The largest between " + num1 + ", " + num2 + " and " + num3 + " is " + max);
+
+    }
+    
+}
+Output:
+Enter three numbers:36 32 63
+The largest between 36, 32 and 63 is 63
+12.Write a recursive program to find the sum of n natural numbers. [ n is user input ]
+SOLUTION:
+import java.util.Scanner;
+public class sumofnatural {
+    public static void main(String s[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the range:");
+                int n = sc.nextInt();
+        System.out.println("The sum of first " + n + " natural numbers is " + sum(n));
+    }
+ private static int sum(int n) 
+   if (n == 0) {
+            return n;
+        }
+        return n + sum(n - 1);
+    }
+}
+Output:
+Enter the range:26
+The sum of first 26 natural numbers is 351
+13.Write a recursive program to find the GCD of two inputted numbers. 
+SOLUTION:
+import java.util.Scanner;
+public class gcd {
+    public static void main(String s[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter two numbers:");
+        int num1=sc.nextInt();
+        int num2=sc.nextInt();
+                System.out.println("The gcd of " + num1 + " and " + num2 + " is " + gcd(num1, num2));
+    }  private static int gcd(int num1, int num2) {
+        if (num2 == 0) {
+            return num1;
+        }
+        return gcd(num2, num1 % num2);
+    }
+}
+Output:
+Enter two numbers:12 36
+The gcd of 12 and 36 is 12
+
+
+
+
+
+
+
