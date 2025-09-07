@@ -1,0 +1,221 @@
+1. Write a program to display your name, branch, roll no, and college name on the computer screen.
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Name: Swati Mishra");
+        System.out.println("Branch: CSE");
+        System.out.println("Roll No: 32");
+        System.out.println("College: Silicon University");
+    }
+}
+Output:
+Name: Swati Mishra
+Branch: CSE
+Roll No: 32
+College: Silicon University
+
+2. Write a program to display the addition result of two numbers 10.25 and 20.55 on the screen.
+class Main {
+    public static void main(String[] args) {
+        double x = 10.25, y = 20.55;
+        double res = x + y;
+        System.out.println("Addition of " + x + " and " + y + " is " + res);
+    }
+}
+Output:
+Addition of 10.25 and 20.55 is 30.8
+
+3. Write a program to input two floating point numbers through the keyboard and display their sum.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter two floating point numbers: ");
+        double x = sc.nextDouble();
+        double y = sc.nextDouble();
+        double res = x + y;
+        System.out.println("The sum of " + x + " and " + y + " is " + res);
+    }
+}
+Output:
+Enter two floating point numbers: 21.55 2.55
+The sum of 21.55 and 2.55 is 24.10
+
+4. Write a program to swap two numbers without using a third variable.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter two numbers x and y: ");
+        int x = sc.nextInt();
+        int y = sc.nextInt();
+        x += y;
+        y = x - y;
+        x -= y;
+        System.out.println("After swapping x: " + x + " and y: " + y);
+    }
+}
+Output:
+Enter two numbers x and y: 36 63
+After swapping x: 20 and y: 10
+
+5. Write a program to check a number is odd or even.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        if (num % 2 == 0) {
+            System.out.println(num + " is even number");
+        } else {
+            System.out.println(num + " is odd number");
+        }
+    }
+}
+Output:
+Enter a number: 3
+3 is odd number
+
+6. Write a program to input the marks of a student in three different subjects and then display the average mark.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter your marks in English: ");
+        double english = sc.nextDouble();
+        System.out.print("Enter your marks in Maths: ");
+        double maths = sc.nextDouble();
+        System.out.print("Enter your marks in Science: ");
+        double science = sc.nextDouble();
+        double average = (english + maths + science) / 3;
+        System.out.println("The average marks in 3 subjects is " + average);
+    }
+}
+Output:
+Enter your marks in English: 95
+Enter your marks in Maths: 88
+Enter your marks in Science: 87
+The average marks in 3 subjects is 90.0
+
+7. Write a program to input the time value in seconds and then display it in the hour: minute: second format using the modulus operator (%).
+For example, INPUT: Enter the time in second: 3610
+                    OUTPUT: 1 hour: 0 minutes: 10 seconds
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter time in seconds: ");
+        int seconds = sc.nextInt();
+        int hours = seconds / 3600;
+        seconds %= 3600;
+        int minutes = seconds / 60;
+        seconds %= 60;
+        System.out.println(hours + " hours: " + minutes + " minutes: " + seconds + " seconds");
+    }
+}
+Output:
+Enter time in seconds: 5600
+1 hours: 33 minutes: 20 seconds
+
+8. Write a program to reverse a number.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        int reversed = 0;
+
+        while (num != 0) {
+            reversed = reversed * 10 + (num % 10);
+            num /= 10;
+        }
+        System.out.println("The reversed number is " + reversed);
+    }
+}
+Output:
+Enter a number: 1234
+The reversed number is 4321
+
+9. Write a program to check a number is prime or not.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        for (int i = 2; i <= num / 2; i++) {
+            if (num % i == 0) {
+                System.out.println(num + " is not a prime number");
+                return;
+            }
+        }
+        System.out.println(num + " is a prime number");
+    }
+}
+Output:
+Enter a number: 2
+2 is a prime number
+
+10. Write a program to find out the sum of the individual digits of a number.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+        int sum = 0;
+
+        while (num != 0) {
+            sum += num % 10;
+            num /= 10;
+        }
+        System.out.println("The sum of the digits is " + sum);
+    }
+}
+Output:
+Enter a number: 11
+The sum of the digits is 2
+
+11. Write a program to check whether an inputted number is positive or negative.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        if (num < 0) {
+            System.out.println(num + " is negative number");
+        } else {
+            System.out.println(num + " is positive number");
+        }
+    }
+}
+Output:
+Enter a number: -9
+-9 is negative number
+
+12. Write a program to test whether a number is positive, negative or equal to zero.
+import java.util.Scanner;
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int num = sc.nextInt();
+
+        if (num < 0) {
+            System.out.println(num + " is negative number");
+        } else if (num > 0) {
+            System.out.println(num + " is positive number");
+        } else {
+            System.out.println(num + " is a zero");
+        }
+    }
+}
+Output:
+Enter a number: 1
+1 is positive number
+
